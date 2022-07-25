@@ -1,4 +1,3 @@
-/etc/nsswitch.conf
 #
 # /etc/nsswitch.conf
 #
@@ -34,13 +33,13 @@
 #shadow:    db files nisplus nis
 #group:     db files nisplus nis
 
-passwd:     files nis sss
-shadow:     files nis sss
-group:      files nis sss
+passwd:     files sss
+shadow:     files sss
+group:      files sss
 #initgroups: files sss
 
 #hosts:     db files nisplus nis dns
-hosts:      files nis dns myhostname
+hosts:      files dns myhostname
 
 # Example - obey only what nisplus tells us...
 #services:   nisplus [NOTFOUND=return] files
@@ -59,9 +58,9 @@ protocols:  files
 rpc:        files
 services:   files sss
 
-netgroup:   files nis sss
+netgroup:   nisplus sss
 
 publickey:  nisplus
 
-automount:  files nis
+automount:  files nisplus sss
 aliases:    files nisplus
